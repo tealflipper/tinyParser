@@ -1,3 +1,11 @@
-a := 3;
-a := a^2*2
-print a
+{
+  a := 3;
+  a := a^2*2;
+  print a;
+  b := 3;
+  b := a^2*3;
+  print a
+}
+{
+  hello 
+}

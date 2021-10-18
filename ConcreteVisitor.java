@@ -63,6 +63,11 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Double>{
         return visit(ctx.expression()); // return child expression's value
     }
 
+    @Override
+    public Double visitBlock(WhilelangParser.BlockContext ctx) {
+        return visit(ctx.seqStatement()); // return child expression's value
+    }
+
 
     @Override
     public Double visitPi(WhilelangParser.PiContext ctx){

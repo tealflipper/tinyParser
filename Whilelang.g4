@@ -1,6 +1,6 @@
 grammar Whilelang;
 
-program: (seqStatement NEWLINE)+;
+program: seqStatement;
 
 seqStatement: statement (';' statement)* ;
 
