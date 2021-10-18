@@ -8,16 +8,17 @@ public class Interpreter {
 
   }
 
-  public double interpret(String inputFile){
+  public double interpret(String inputFile) throws Exception{
     InputStream is = System.in;
     if (inputFile != null) is = new FileInputStream(inputFile);
     ANTLRInputStream input = new ANTLRInputStream(is); 
-    WhileLangLexer lexer = new WhileLangLexer(input);
+    WhilelangLexer lexer = new WhilelangLexer(input);
     CommonTokenStream tokens = new CommonTokenStream(lexer);
-    WhileLangParser parser = new WhileLangParser(tokens);
-    ParseTree tree = parser.prog(); // parse; start at prog ​
+    WhilelangParser parser = new WhilelangParser(tokens);
+    ParseTree tree = parser.program(); // parse; start at prog ​
     ConcreteVisitor eval = new ConcreteVisitor();
     double val = eval.visit(tree);
     System.out.println("value: "+val);
+    return val;
   }
 }
