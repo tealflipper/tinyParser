@@ -1,12 +1,12 @@
 {
-  a := 3;
+  b := 2;
+  a := sin(b);
   a := a^2*2;
   print a;
   b := 3;
   b := a^2*3;
   print "a: ";
-  print a
-}
-{
-  hello 
+  print a;
+
+  print "hello "
 }

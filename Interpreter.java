@@ -18,7 +18,7 @@ public class Interpreter {
     ParseTree tree = parser.program(); // parse; start at prog ​
     ConcreteVisitor eval = new ConcreteVisitor();
     double val = eval.visit(tree);
-    System.out.println("value: "+val);
+    // System.out.println("value: "+val);
     return val;
   }
 }
