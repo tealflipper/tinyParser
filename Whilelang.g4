@@ -1,8 +1,8 @@
 grammar Whilelang;
 
-program: seqStatement;
+program: (seqStatement NEWLINE)+;
 
-seqStatement: statement (';' statement)*;
+seqStatement: statement (';' statement)* ;
 
 statement:
 	ID ':=' expression								# attrib
@@ -64,4 +64,5 @@ E: 'e';
 INT: ('0' ..'9')+;
 ID: ('a' ..'z')+;
 Text: '"' .*? '"';
-Space: [ \t\n\r] -> skip;
+NEWLINE:'\r'? '\n';
+SPACE: [ \t\n\r] -> skip;
