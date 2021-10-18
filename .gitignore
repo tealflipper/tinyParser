@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
-
+W*.java
+*.interp
+*.tokens
+/.idea
 # Log file
 *.log
 
