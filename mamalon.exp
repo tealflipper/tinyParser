@@ -9,12 +9,6 @@
   print a;
   print "b: ";
   print b;
-  if false then print b else print a;
-  if true and false then print b else print a;
-  if not true then print b else print a;   
-  print "hello ";
-  print 3;
-  if 6.8 <= 6.5 then print b else print a
   if (6.8 <= 6.5) 
       then {
         print b
