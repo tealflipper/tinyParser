@@ -44,8 +44,8 @@ En nuestra calculadora estamos usando nuestra implementación del visitor para e
 
 ```cd antlr4_scientific_calculator```
 
-```antlr4 -no-listener -visitor WhileLang.g4```
+```antlr4 -no-listener -visitor Whilelang.g4```
 
-```javac Calculator*.java WhileLang*.java```
+```javac *.java```
 
 ```java CalculatorGui```

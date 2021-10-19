@@ -11,7 +11,7 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
   @Override
   public Double visitAttrib(WhilelangParser.AttribContext ctx) {
     String id = ctx.ID().getText(); // id is left-hand side of '='
-    double value = (double) visit(ctx.expression()); // compute value of expression on right
+    double value = Double.valueOf( visit(ctx.expression())); // compute value of expression on right
     memory.put(id, value); // store it in our memory
     return value;
   }
@@ -26,7 +26,7 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
 
   @Override
   public Double visitWrite(WhilelangParser.WriteContext ctx) {
-    double value = (double) visit(ctx.expression()); // evaluate the expression child
+    double value = Double.valueOf(visit(ctx.expression())); // evaluate the expression child
     DecimalFormat df = new DecimalFormat("#");
     df.setMaximumFractionDigits(8);
     System.out.println(df.format(value)); // print the result
@@ -44,14 +44,14 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
   public Double visitId(WhilelangParser.IdContext ctx) {
     String id = ctx.ID().getText();
     if (memory.containsKey(id))
-      return (Double) memory.get(id);
+      return Double.valueOf( (String) memory.get(id));
     return 0.0;
   }
 
   /** expression op=('*'|'/') expression */
   @Override
   public Double visitMulDivPow(WhilelangParser.MulDivPowContext ctx) {
-    double left = (double) visit(ctx.expression(0)); // get value of left subexpression
+    double left = Double.valueOf(visit(ctx.expression(0))); // get value of left subexpression
     double right = (double) visit(ctx.expression(1)); // get value of right subexpression
     if (ctx.op.getType() == WhilelangParser.POW)
       return Math.pow(left, right);
