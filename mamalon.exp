@@ -1,7 +1,7 @@
 {
   b := 2;
   a := sin(b);
-  a := a^2*2;
+  a := 5e-2;
   print a;
   b := 3;
   b := a^2*3;
@@ -9,6 +9,11 @@
   print a;
   print "b: ";
   print b;
+  print acos(cos(pi));
+  print log(10);
+  print ln(e);
+  print sqrt(4);
+  print 10E-5;
   if (6.8 <= 6.5) 
       then {
         print b

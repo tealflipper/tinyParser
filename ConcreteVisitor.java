@@ -110,8 +110,8 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
     if (ctx.op.getType() == WhilelangParser.ASIN)
       return Math.asin(expression);
     if (ctx.op.getType() == WhilelangParser.ACOS)
-      return Math.cos(expression);
-    return Math.tan(expression); // must be tan
+      return Math.acos(expression);
+    return Math.atan(expression); // must be tan
   }
 
   @Override
