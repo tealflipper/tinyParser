@@ -7,8 +7,6 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
   Map<String, Object> memory = new HashMap<String, Object>();
 
