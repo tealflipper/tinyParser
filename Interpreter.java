@@ -8,7 +8,7 @@ public class Interpreter {
 
   }
 
-  public double interpret(String inputFile) throws Exception{
+  public Object interpret(String inputFile) throws Exception{
     InputStream is = System.in;
     if (inputFile != null) is = new FileInputStream(inputFile);
     ANTLRInputStream input = new ANTLRInputStream(is); 
@@ -17,8 +17,8 @@ public class Interpreter {
     WhilelangParser parser = new WhilelangParser(tokens);
     ParseTree tree = parser.program(); // parse; start at prog ​
     ConcreteVisitor eval = new ConcreteVisitor();
-    double val = eval.visit(tree);
-    // System.out.println("value: "+val);
+    Object val = eval.visit(tree);
+    System.out.println();
     return val;
   }
 }
