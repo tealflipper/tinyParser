@@ -1,6 +1,6 @@
 # tinyParser
 
-[Repositorio en Github de **Arturo Fuentes Velasco**](https://github.com/tealflipper/antlr4_scientific_calculator)
+[Repositorio en Github de **Arturo Fuentes Velasco, Kevin Enrique Ortega Olvera, José de Jesús Mendoza Becerril **](https://github.com/tealflipper/antlr4_scientific_calculator)
 - [antlr4_scientific_calculator](#antlr4_scientific_calculator)
   - [Cómo está articulado el traductor:](#cómo-está-articulado-el-traductor)
     - [Visitor](#visitor)
