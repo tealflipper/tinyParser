@@ -1,4 +1,4 @@
-# antlr4_scientific_calculator
+# tinyParser
 
 [Repositorio en Github de **Arturo Fuentes Velasco**](https://github.com/tealflipper/antlr4_scientific_calculator)
 - [antlr4_scientific_calculator](#antlr4_scientific_calculator)
