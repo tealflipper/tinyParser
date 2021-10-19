@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +25,7 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
   @Override
   public Double visitPrint(WhilelangParser.PrintContext ctx) {
     String value = ctx.Text().getText().replaceAll("\"", "");; // evaluate the expression child
-    System.out.print(value); // print the result  
+    System.out.println(value); // print the result  
     return 1.0;
   }
 
@@ -126,7 +131,7 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
   }
 
   @Override public Boolean visitBoolean(WhilelangParser.BooleanContext ctx) {
-    System.out.println(Boolean.valueOf(ctx.getText())); 
+    //system.out.println(Boolean.valueOf(ctx.getText())); 
     return Boolean.valueOf(ctx.getText());
   }
 
@@ -140,14 +145,14 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
   public Boolean visitAnd(WhilelangParser.AndContext ctx) {
     Boolean first = (Boolean) visit(ctx.bool(0));
     Boolean second = (Boolean) visit(ctx.bool(1));
-    System.out.println("First" + first + "Second" + second);
+    //system.out.println("First" + first + "Second" + second);
     return first && second; 
   }
 
   @Override 
   public Boolean visitNot(WhilelangParser.NotContext ctx) { 
     Boolean value = (Boolean) visit(ctx.bool());
-    System.out.println("Bool: " +  !value);
+    //system.out.println("Bool: " +  !value);
     return !value; 
   }
 
@@ -155,7 +160,7 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
   @Override 
   public Boolean visitRelOp(WhilelangParser.RelOpContext ctx) { 
     String op = String.valueOf(ctx.op.getText());
-    System.out.println("Operador" + op.equals("<="));
+    ////system.out.println("Operador" + op.equals("<="));
     Double val1 = (Double) visit(ctx.expression(0));
     Double val2 = (Double) visit(ctx.expression(1));
     Boolean res = false;
@@ -169,7 +174,7 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
         break;
        
     }
-    System.out.println("Este es res relop:" + res);  
+    ////system.out.println("Este es res relop:" + res);  
     return res; 
   }
 
@@ -182,5 +187,34 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
     }
     
   }
+
+  @Override 
+  public Object visitWhile(WhilelangParser.WhileContext ctx) { 
+    Object value=null;
+    while((Boolean)visit(ctx.bool())){
+      value = visit(ctx.statement());
+    }
+    return value; 
+  }
+
+  @Override 
+  public Object visitRead(WhilelangParser.ReadContext ctx) { 
+    String inputString = ctx.getText();
+    System.out.println(inputString);
+    
+		try {
+			
+				BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+				return new String(buffer.readLine());
+			
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+
+//*/
+    
+  }
+
+  
 
 }
