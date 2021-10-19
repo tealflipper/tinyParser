@@ -64,5 +64,4 @@ E: 'e';
 INT: ('0' ..'9')+;
 ID: ('a' ..'z')+;
 Text: '"' .*? '"';
-NEWLINE:'\r'? '\n';
-SPACE: [ \t\n\r] -> skip;
+SPACE: [ \t\n\r]+ -> skip;
