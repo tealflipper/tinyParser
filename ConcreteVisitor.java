@@ -126,8 +126,8 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
   }
 
   @Override public Boolean visitBoolean(WhilelangParser.BooleanContext ctx) {
-    System.out.println(ctx.getText() == "true" ? true : false); 
-    return ctx.getText() == "true" ? true : false;
+    System.out.println(Boolean.valueOf(ctx.getText())); 
+    return Boolean.valueOf(ctx.getText());
   }
 
 	@Override 

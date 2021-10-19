@@ -9,7 +9,7 @@
   print a;
   print "b: ";
   print b;
-if false then print b; else print a;
+if true then print b; else print a;
 
   print "hello "
 }
