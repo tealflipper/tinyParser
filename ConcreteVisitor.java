@@ -125,15 +125,29 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
     return Math.log(value);
   }
 
-  @Override public Boolean visitBoolean(WhilelangParser.BooleanContext ctx) {
-    System.out.println(ctx.getText() == "true" ? true : false); 
-    return ctx.getText() == "true" ? true : false;
+  @Override 
+  public Boolean visitBoolean(WhilelangParser.BooleanContext ctx) {
+    System.out.println("Valoor" + ctx.getText().toString()); 
+    return ctx.getText().toString() == "true" ? true : false;
   }
 
 	@Override 
   public Object visitBoolParen(WhilelangParser.BoolParenContext ctx) { 
-
     return visitChildren(ctx); 
+  }
+
+  @Override 
+  public Boolean visitAnd(WhilelangParser.AndContext ctx) {
+    Boolean first = (Boolean) visit(ctx.bool(0));
+    Boolean second = (Boolean) visit(ctx.bool(1));
+    System.out.println("First" + first + "Second" + second);
+    return first && second; 
+  }
+
+  @Override public Boolean visitNot(WhilelangParser.NotContext ctx) { 
+    Boolean value = (Boolean) visit(ctx.bool());
+    System.out.println("Bool: " +  !value);
+    return !value; 
   }
 
 }

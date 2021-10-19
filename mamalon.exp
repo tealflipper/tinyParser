@@ -9,7 +9,8 @@
   print a;
   print "b: ";
   print b;
-if false then print b; else print a;
-
+if false then print b else print a;
+if true and false then print b else print a;
+if not true then print b else print a;   
   print "hello "
 }
