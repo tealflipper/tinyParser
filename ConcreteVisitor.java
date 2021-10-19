@@ -173,4 +173,14 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
     return res; 
   }
 
+  @Override 
+  public Object visitIf(WhilelangParser.IfContext ctx) { 
+    if((Boolean)visit(ctx.bool())){
+      return visit(ctx.statement(0));
+    }else{
+      return visit(ctx.statement(1));
+    }
+    
+  }
+
 }
