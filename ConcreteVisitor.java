@@ -205,7 +205,7 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
 		try {
 			
 				BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
-				return new String(buffer.readLine());
+				return new Double(buffer.readLine());
 			
 		} catch (IOException e) {
 			throw new RuntimeException(e);
