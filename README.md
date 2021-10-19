@@ -40,7 +40,7 @@ En nuestra calculadora estamos usando nuestra implementación del visitor para e
 
 ## instrucciones para compilar y correr:
 
-```git clone https://github.com/tealflipper/antlr4_scientific_calculator.git```
+```git clone https://github.com/tealflipper/tinyParser.git```
 
 ```cd antlr4_scientific_calculator```
 
