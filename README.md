@@ -1,6 +1,6 @@
-# antlr4_scientific_calculator
+# tinyParser
 
-[Repositorio en Github de **Arturo Fuentes Velasco**](https://github.com/tealflipper/antlr4_scientific_calculator)
+[Repositorio en Github de **Arturo Fuentes Velasco, Kevin Enrique Ortega Olvera, José de Jesús Mendoza Becerril **](https://github.com/tealflipper/antlr4_scientific_calculator)
 - [antlr4_scientific_calculator](#antlr4_scientific_calculator)
   - [Cómo está articulado el traductor:](#cómo-está-articulado-el-traductor)
     - [Visitor](#visitor)
@@ -40,7 +40,7 @@ En nuestra calculadora estamos usando nuestra implementación del visitor para e
 
 ## instrucciones para compilar y correr:
 
-```git clone https://github.com/tealflipper/antlr4_scientific_calculator.git```
+```git clone https://github.com/tealflipper/tinyParser.git```
 
 ```cd antlr4_scientific_calculator```
 
