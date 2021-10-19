@@ -30,8 +30,8 @@ expression:
     ;
 
 bool: ('true' | 'false')			# boolean
-	| expression '=' expression		# relOp
-	| expression '<=' expression	# relOp
+	| expression op='=' expression		# relOp
+	| expression op='<=' expression	# relOp
 	| 'not' bool					# not
 	| bool 'and' bool				# and
 	| '(' bool ')'					# boolParen;

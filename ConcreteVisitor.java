@@ -131,8 +131,9 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
   }
 
 	@Override 
-  public Object visitBoolParen(WhilelangParser.BoolParenContext ctx) { 
-    return visitChildren(ctx); 
+  public Object visitBoolParen(WhilelangParser.BoolParenContext ctx) {
+
+    return visit(ctx.bool()); 
   }
 
   @Override 
@@ -143,10 +144,33 @@ public class ConcreteVisitor extends WhilelangBaseVisitor<Object> {
     return first && second; 
   }
 
-  @Override public Boolean visitNot(WhilelangParser.NotContext ctx) { 
+  @Override 
+  public Boolean visitNot(WhilelangParser.NotContext ctx) { 
     Boolean value = (Boolean) visit(ctx.bool());
     System.out.println("Bool: " +  !value);
     return !value; 
+  }
+
+
+  @Override 
+  public Boolean visitRelOp(WhilelangParser.RelOpContext ctx) { 
+    String op = String.valueOf(ctx.op.getText());
+    System.out.println("Operador" + op.equals("<="));
+    Double val1 = (Double) visit(ctx.expression(0));
+    Double val2 = (Double) visit(ctx.expression(1));
+    Boolean res = false;
+
+    switch (op){
+      case "<=":
+         res = val1 <= val2; 
+        break;
+      case "=":
+        res = val1 == val2;
+        break;
+       
+    }
+    System.out.println("Este es res relop:" + res);  
+    return res; 
   }
 
 }
