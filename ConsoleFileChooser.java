@@ -4,7 +4,7 @@ import java.io.File;
 
 import javax.swing.JFileChooser;
 
-public class Mamalona {
+public class ConsoleFileChooser {
   
   public static void main(String[] args) throws Exception{
     Interpreter intp = new Interpreter();
