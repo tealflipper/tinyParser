@@ -8,4 +8,4 @@
 
 ```javac *.java```
 
-```java TinyParserGui```
+```java TinyParserGUI```
